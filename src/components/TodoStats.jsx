@@ -3,9 +3,10 @@ import { useTheme } from "../hooks/useTheme";
 
 export const TodoStats = ({ todos }) => {
   const { currentTheme } = useTheme();
+
   const completed = todos.filter((todo) => todo.completed).length;
   const total = todos.length;
-  const completionRate = total > 0 ? Math.round(completed / total) * 100 : 0;
+  const completionRate = total > 0 ? Math.round((completed / total) * 100) : 0;
 
   const stats = [
     {
@@ -30,10 +31,10 @@ export const TodoStats = ({ todos }) => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-      {stats.map((stats, index) => (
+      {stats.map((stat, index) => (
         <div
           key={index}
-          className="p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          className="p-6 rounded-2xl transition-all duration-300  hover:scale-105 hover:shadow-lg"
           style={{
             backgroundColor: currentTheme.colors.surface,
             border: `1px solid ${currentTheme.colors.border}`,
@@ -45,20 +46,20 @@ export const TodoStats = ({ todos }) => {
                 className="text-sm font-medium"
                 style={{ color: currentTheme.colors.textSecondary }}
               >
-                {stats.label}
+                {stat.label}
               </p>
               <p
                 className="text-2xl font-bold mt-1"
                 style={{ color: currentTheme.colors.text }}
               >
-                {stats.value}
+                {stat.value}
               </p>
             </div>
             <div
               className="p-3 rounded-xl"
-              style={{ backgroundColor: `${stats.color}20` }}
+              style={{ backgroundColor: `${stat.color}20` }}
             >
-              <icon size={24} color={stats.color} />
+              <stat.icon size={24} color={stat.color} />
             </div>
           </div>
         </div>
