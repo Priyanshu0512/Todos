@@ -6,7 +6,7 @@ export const ProgressBar = ({ todos }) => {
 
   const completed = todos.filter((todo) => todo.completed).length;
   const total = todos.length;
-  const percentage = total > 0 ? Math.round(completed / total) * 100 : 0;
+  const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
 
   return (
     <div className="mb-6">

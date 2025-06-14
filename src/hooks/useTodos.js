@@ -26,7 +26,7 @@ export const useTodos = () => {
       completed: false,
       priority,
       category,
-      createdaAt: new Date(),
+      createdAt: new Date(),
       dueDate,
     };
     setTodos((prev) => [newTodo, ...prev]);

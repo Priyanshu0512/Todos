@@ -25,7 +25,7 @@ export const AddTodoForm = ({ onAdd }) => {
   ];
 
   const handleSubmit = (e) => {
-    e.prevenetDefault();
+    e.preventDefault();
     if (text.trim()) {
       const dueDateObj = dueDate ? new Date(dueDate) : undefined;
       onAdd(text.trim(), priority, category, dueDateObj);
