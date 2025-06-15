@@ -118,7 +118,6 @@ button:disabled {
   background-clip: text;
 }
 
-/* Progress bar animations */
 .progress-bar {
   position: relative;
   overflow: hidden;
